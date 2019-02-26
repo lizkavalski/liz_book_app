@@ -15,6 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname +'/public'));
 
+
 // API Routes
 // Renders the search form
 app.get('/', newSearch);
@@ -28,10 +29,13 @@ app.get('*', (request, response) => response.status(404).send('This route does n
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
-// Only show part of this to get students started
 function Book(info) {
   const placeHolder = 'https://i.imgur.com/J5LVHEL.jpg';
   this.title = info.title || 'No Title Avaialble';
+  this.author = info.authors || 'No Author Available';
+  this.isbn=info.industryIdentifiers;
+  this.img_url = info.imageLinks ? info.imageLinks.thumbnail : placeHolder;
+  this.description=info.description || 'No description is Available'
 }
 
 // Note that .ejs file extension is not required
@@ -54,8 +58,15 @@ function createSearch(request, response) {
   console.log(url);
 
   superagent.get(url)
-    .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
-    .then(results => response.render('pages/searches/show', { searchesResults: results }));
+    .then(apiResponse => apiResponse.body.items.map(bookResult => {
+        //console.log(bookResult.volumeInfo);
+        new Book(bookResult.volumeInfo);
+    }))
+    .then(results => {
+        console.log('line 66', results);
+      response.render('pages/searches/show', { searchesResults: results });
+        //response.send('rendering');
+});
 
   // how will we handle errors?
 }
