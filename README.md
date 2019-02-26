@@ -30,6 +30,17 @@ Estimate of time needed to complete: _1hr 30 mins____
 
 Start time: __9:45___
 
+Finish time: _10:20____
+
+Actual time needed to complete: _35 mins____
+
+Number and name of feature:_As a user, I want to search the Google Books API so that I can view the results of my search.__
+
+Estimate of time needed to complete: _ 20 mins____
+
+Start time: __10:25___
+
 Finish time: _____
 
 Actual time needed to complete: _____
+
