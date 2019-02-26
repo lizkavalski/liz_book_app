@@ -8,7 +8,7 @@ This project is to allow the user to search for a book by title or, author, from
 
 ## Getting Started
 <!-- What are the steps that a user(another developer) must take in order to build this app on their own machine and get it running? -->
--At this point the steps that a user must take in order to build this app on their own machine and get it running is 
+-At this point the steps that a user must take in order to build this app on their own machine and get it running is you will need to `git clone`this repo, then run a npm i to insteall the depenencies on to your local machine.   
  
 
 ## Architecture
@@ -24,3 +24,12 @@ The site will be using JS server, express, ejs, cors, and pg
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 -->
 ```
+Number and name of feature:_1. As a user, I want my application to load quickly so that I have an enjoyable experience__
+
+Estimate of time needed to complete: _1hr 30 mins____
+
+Start time: __9:45___
+
+Finish time: _____
+
+Actual time needed to complete: _____
