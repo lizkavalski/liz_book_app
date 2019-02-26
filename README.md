@@ -17,6 +17,7 @@ The site will be using JS server, express, ejs, cors,pg, and superagant.
 
 ## Change Log
 02-26-2019 10:25am Proof of life
+02-26-2019 10:35am a form add to index.ejs
 01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
 
 ## Credits and Collaborations
@@ -33,13 +34,25 @@ Finish time: _10:20____
 
 Actual time needed to complete: _35 mins____
 
-Number and name of feature:_As a user, I want to search the Google Books API so that I can view the results of my search.__
+
+Number and name of feature:_2.As a user, I want to search the Google Books API so that I can view the results of my search.__
 
 Estimate of time needed to complete: _ 20 mins____
 
 Start time: __10:25___
 
-Finish time: _____
+Finish time: __10:35___
 
-Actual time needed to complete: _____
+Actual time needed to complete: __10___
+
+
+Number and name of feature:_3. As a user, I want to be able to browse the search results.__
+
+Estimate of time needed to complete: _ 1 hr 30 mins____
+
+Start time: __10:40___
+
+Finish time: __10:35___
+
+Actual time needed to complete: __10___
 
