@@ -13,7 +13,7 @@ This project is to allow the user to search for a book by title or, author, from
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-The site will be using JS server, express, ejs, cors, and pg
+The site will be using JS server, express, ejs, cors,pg, and superagant.
 
 ## Change Log
 <!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
