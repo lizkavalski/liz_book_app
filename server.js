@@ -3,6 +3,8 @@
 // Application Dependencies
 const express = require('express');
 const superagent = require('superagent');
+const pg = require('pg');
+const cors = require('cors');
 
 // Application Setup
 const app = express();
@@ -10,6 +12,11 @@ const PORT = process.env.PORT || 3000;
 
 // Application Middleware
 app.use(express.urlencoded({ extended: true }));
+
+// Database setup
+const client = new pg.Client(process.env.DATABASE_URL);
+client.connect();
+client.on('error', err => console.error(err));
 
 
 // Set the view engine for server-side templating
@@ -20,7 +27,7 @@ app.use(express.static('./public'));
 
 // API Routes
 // Renders the search form
-app.get('/', newSearch);
+app.get('/new', newSearch);
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
