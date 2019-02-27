@@ -24,13 +24,15 @@ app.get('/', newSearch);
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
-
-// Catch-all
-app.get('*', (request, response) => response.status(404).send('This route does not exist'));
-
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 
 // HELPER FUNCTIONS
+
+function handleError(error, response) {
+  console.error(error);
+  response.render('pages/error');
+}
+
 function Book(info) {
   const placeHolder = 'https://i.imgur.com/J5LVHEL.jpg';
   this.title = info.title ? info.title : 'No Title Avaialble';
@@ -63,8 +65,8 @@ function createSearch(request, response) {
   console.log(url);
 
   superagent.get(url)
-    .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
-    .then(results => response.render('pages/searches/show', { searchesResults: results }));
-
-  // how will we handle errors?
+    .then(apiResponse =>
+      apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
+    .then(results => response.render('pages/searches/show', { searchesResults: results }))
+    .catch(error => handleError(error, response));
 }
