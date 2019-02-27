@@ -11,9 +11,11 @@ const PORT = process.env.PORT || 3000;
 // Application Middleware
 app.use(express.urlencoded({ extended: true }));
 
-// Set the file locations for ejs templates and static files like CSS
+
+// Set the view engine for server-side templating
 app.set('view engine', 'ejs');
-app.use(express.static(__dirname +'/public'));
+// Set the file locations for ejs templates and static files like CSS
+app.use(express.static('./public'));
 
 
 // API Routes
@@ -31,11 +33,12 @@ app.listen(PORT, () => console.log(`Listening on port: ${PORT}`));
 // HELPER FUNCTIONS
 function Book(info) {
   const placeHolder = 'https://i.imgur.com/J5LVHEL.jpg';
-  this.title = info.title || 'No Title Avaialble';
-  this.author = info.authors || 'No Author Available';
-  this.isbn=info.industryIdentifiers;
+  this.title = info.title ? info.title : 'No Title Avaialble';
+  this.author = info.authors ? info.authors : 'No Author Available';
+  this.isbn = info.industryIdentifiers ? `ISBN_13 ${info.industryIdentifiers[0].identifier}` : 'No ISBN available';
   this.img_url = info.imageLinks ? info.imageLinks.thumbnail : placeHolder;
-  this.description=info.description || 'No description is Available'
+  this.description = info.description ? info.description : 'No description is available';
+  this.id = info.industryIdentifiers ? `${info.industryIdentifiers[0].identifier}` : ''
 }
 
 // Note that .ejs file extension is not required
@@ -43,6 +46,8 @@ function newSearch(request, response) {
   response.render('pages/index'); //location for ejs files
   app.use(express.static('./public'));//location for other files like css
 }
+
+// No API key required
 
 // No API key required
 // Console.log request.body and request.body.search
@@ -58,15 +63,8 @@ function createSearch(request, response) {
   console.log(url);
 
   superagent.get(url)
-    .then(apiResponse => apiResponse.body.items.map(bookResult => {
-        //console.log(bookResult.volumeInfo);
-        new Book(bookResult.volumeInfo);
-    }))
-    .then(results => {
-        console.log('line 66', results);
-      response.render('pages/searches/show', { searchesResults: results });
-        //response.send('rendering');
-});
+    .then(apiResponse => apiResponse.body.items.map(bookResult => new Book(bookResult.volumeInfo)))
+    .then(results => response.render('pages/searches/show', { searchesResults: results }));
 
   // how will we handle errors?
 }

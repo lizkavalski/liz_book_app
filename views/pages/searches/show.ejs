@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" conent="width=device-width, initial-scale=1.0">
+  <title>Personal Book Collection</title>
+  <link rel="stylesheet" href="/style/reset.css">
+</head>
+
+<body>
+  <header>
+    <div>
+        <a href="/">
+        <h1>My Book List</h1>
+        </a>
+    </div>
+  </header>
+
+  <main>
+    <h2>Search Results</h4>
+  <ul class="search-results">
+    <% searchesResults.forEach(item => { %>
+        <section>
+          <img src="<%= item.img_url %>">
+          <h3><%= item.title %></h3>
+          <span><%= item.author %></span>
+          <p><%= item.description %></p>
+          <span><%= item.isbn %></span>
+        </section>
+    <% }) %>
+  </ul>
+</main>
+</body>
+
+</html>
+
+
+
