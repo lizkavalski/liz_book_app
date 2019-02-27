@@ -20,6 +20,7 @@ The site will be using JS server, express, ejs,pg, and superagant.
 02-26-2019 10:25am Proof of life
 02-26-2019 10:35am a form add to index.ejs
 02-27-2019 9:30am Now shows search results
+02-27-2019 10:50am If an error orrurs then show a error veiw to the clinent.
 
 
 ## Credits and Collaborations
@@ -64,8 +65,18 @@ Number and name of feature:_4. As a user, I want to view any error messages that
 
 Estimate of time needed to complete: _ 1 hr 30 mins____
 
-Start time: __10:40am(2/27/2019)___
+Start time: __9:40am(2/27/2019)___
 
-Finish time: __9:30am(2/27/2019___
+Finish time: __10:50am(2/27/2019___
 
-Actual time needed to complete: __23 hrs___
+Actual time needed to complete: __1 hrs 10min___
+
+Number and name of feature:_5. As a user, I want a simple, clean looking UI so that my application is easy to navigate.__
+
+Estimate of time needed to complete: _ 30 mins____
+
+Start time: __11:00am(2/27/2019)___
+
+Finish time: __10:50am(2/27/2019___
+
+Actual time needed to complete: __1 hrs 10min___
