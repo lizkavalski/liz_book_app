@@ -2,6 +2,7 @@
 
 **Author**: Elizabeth Kavalski
 **Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+1.0.4 adding error page
 
 ## Overview
 This project is to allow the user to search for a book by title or, author, from Google books on the home screen. Then base on the search results the user can scrool through the results from Google books.  
@@ -13,17 +14,19 @@ This project is to allow the user to search for a book by title or, author, from
 
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
-The site will be using JS server, express, ejs, cors,pg, and superagant.
+The site will be using JS server, express, ejs,pg, and superagant.
 
 ## Change Log
 02-26-2019 10:25am Proof of life
 02-26-2019 10:35am a form add to index.ejs
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
+02-27-2019 9:30am Now shows search results
+
 
 ## Credits and Collaborations
 <!-- Give credit (and a link) to other people or resources that helped you build this application. -->
 -->
 ```
+LAB 11 FEATURES
 Number and name of feature:_1. As a user, I want my application to load quickly so that I have an enjoyable experience__
 
 Estimate of time needed to complete: _1hr 30 mins____
@@ -32,7 +35,7 @@ Start time: __9:45___
 
 Finish time: _10:20____
 
-Actual time needed to complete: _35 mins____
+Actual time needed to complete: _35 mins__
 
 
 Number and name of feature:_2.As a user, I want to search the Google Books API so that I can view the results of my search.__
@@ -50,9 +53,19 @@ Number and name of feature:_3. As a user, I want to be able to browse the search
 
 Estimate of time needed to complete: _ 1 hr 30 mins____
 
-Start time: __10:40___
+Start time: __10:40am(2/26/2019)___
 
-Finish time: __10:35___
+Finish time: __9:30am(2/27/2019___
 
-Actual time needed to complete: __10___
+Actual time needed to complete: __23 hrs___
 
+
+Number and name of feature:_4. As a user, I want to view any error messages that occur during the usage of my book list application so that I know if something has gone wrong.__
+
+Estimate of time needed to complete: _ 1 hr 30 mins____
+
+Start time: __10:40am(2/27/2019)___
+
+Finish time: __9:30am(2/27/2019___
+
+Actual time needed to complete: __23 hrs___
