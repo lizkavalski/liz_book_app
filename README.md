@@ -77,6 +77,20 @@ Estimate of time needed to complete: _ 30 mins____
 
 Start time: __11:00am(2/27/2019)___
 
-Finish time: __10:50am(2/27/2019___
+Finish time: __11:20am(2/27/2019___
 
-Actual time needed to complete: __1 hrs 10min___
+Actual time needed to complete: __20min___
+
+LAB 12
+Number and name of feature:_1.. As a user, I want all of my saved books to be displayed on the home page so that I can view all of the books from my collection in a single view. __
+
+Estimate of time needed to complete: _ 1 hr____
+
+Start time: __11:20am(2/27/2019)___
+
+Finish time: __12:00am(2/28/2019___
+
+Actual time needed to complete: __25 hrs___
+
+
+
