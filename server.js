@@ -31,6 +31,7 @@ app.use(express.static('./public'));
 // API Routes
 // Renders the search form
 app.get('/', bookList);
+app.get('/new', newSearch);
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
@@ -65,11 +66,9 @@ function bookList(request, response){
 
 // Note that .ejs file extension is not required
 function newSearch(request, response) {
-  response.render('pages/index'); //location for ejs files
+  response.render('pages/searches/new'); //location for ejs files
   app.use(express.static('./public'));//location for other files like css
 }
-
-// No API key required
 
 // No API key required
 // Console.log request.body and request.body.search
