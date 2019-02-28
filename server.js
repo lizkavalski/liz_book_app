@@ -4,7 +4,7 @@
 const express = require('express');
 const superagent = require('superagent');
 const pg = require('pg');
-const cors = require('cors');
+// const cors = require('cors');
 
 // Application Setup
 const app = express();
@@ -27,7 +27,7 @@ app.use(express.static('./public'));
 
 // API Routes
 // Renders the search form
-app.get('/new', newSearch);
+app.get('/', newSearch);
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
