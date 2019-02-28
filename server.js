@@ -13,6 +13,9 @@ const PORT = process.env.PORT || 3000;
 // Application Middleware
 app.use(express.urlencoded({ extended: true }));
 
+// Load environment variables from .env file
+require('dotenv').config();
+
 // Database setup
 const client = new pg.Client(process.env.DATABASE_URL);
 client.connect();
@@ -27,7 +30,7 @@ app.use(express.static('./public'));
 
 // API Routes
 // Renders the search form
-app.get('/', newSearch);
+app.get('/', bookList);
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
@@ -49,6 +52,16 @@ function Book(info) {
   this.description = info.description ? info.description : 'No description is available';
   this.id = info.industryIdentifiers ? `${info.industryIdentifiers[0].identifier}` : ''
 }
+
+function bookList(request, response){
+  const SQL = `SELECT * FROM books;`;
+  // const values = [request.query.items];
+
+  return client.query(SQL)
+    .then(results => response.render('pages/index', { bookList:results.rows }))
+    .catch(handleError);
+}
+
 
 // Note that .ejs file extension is not required
 function newSearch(request, response) {

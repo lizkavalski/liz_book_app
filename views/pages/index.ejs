@@ -10,7 +10,7 @@
 </head>
 <body>
     <main>
-        <h4>Search by Title or Author</h4>
+        <!-- <h4>Search by Title or Author</h4>
         <form action="/searches" method="post">
           <input type="text" name="search" placeholder="Enter a title or author" required>
           <fieldset>
@@ -26,7 +26,21 @@
             </label>
           </fieldset>
           <button type="submit">Search the Google Books API</button>
-        </form>
+        </form> -->
+
+        <h2>My Book List</h4>
+          <ul class="book-list">
+            <% bookList.forEach(item => { %>
+                <section>
+                  <img src="<%= item.img_url %>">
+                  <h3><%= item.title %></h3>
+                  <span><%= item.author %></span>
+                  <p><%= item.description %></p>
+                  <span><%= item.isbn %></span>
+                </section>
+            <% }) %>
+          </ul>
+
     </main>
 </body>
 </html>
