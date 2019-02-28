@@ -14,7 +14,7 @@ INSERT INTO books (author, title, isbn, image_url, description, bookshelf) VALUE
   'Liz',
   'Cat Naps',
   '123456789',
-  'http://placeholder.it',
+  'https://via.placeholder.com/150',
   'A book about how to take the best cat naps.',
   'self-care'
 );
@@ -23,7 +23,7 @@ INSERT INTO books (author, title, isbn, image_url, description, bookshelf) VALUE
   'Jon',
   'Cat Conversations',
   '1234567898765',
-  'http://placeholder.it/250',
+  'https://via.placeholder.com/150',
   'A book of conversations I have had with my cat.',
   'biography'
 );
