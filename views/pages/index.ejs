@@ -11,7 +11,8 @@
 <body>
     <a href="/new"><h3> New Search</h3></a>
     <main>
-        <h2>My Book List</h4>
+        <h2><%= bookList.length %> Saved Books</h4>
+
           <ul class="book-list">
             <% bookList.forEach(item => { %>
                 <section>

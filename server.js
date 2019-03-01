@@ -32,6 +32,7 @@ app.use(express.static('./public'));
 // Renders the search form
 app.get('/', bookList);
 app.get('/new', newSearch);
+app.get('books/:id', bookDetails);
 
 // Creates a new search to the Google Books API
 app.post('/searches', createSearch);
@@ -63,6 +64,14 @@ function bookList(request, response){
     .catch(handleError);
 }
 
+function bookDetails(request, response) {
+  const SQL = `SELECT * FROM books WHERE id=$1;`;
+  let values = [request.params.book_id];
+
+  return client.query(SQL, values)
+    .then(results => response.render('pages/books/detail', { book:results.rows[0]}))
+    .catch(err => handleError(err, response));
+}
 
 // Note that .ejs file extension is not required
 function newSearch(request, response) {
