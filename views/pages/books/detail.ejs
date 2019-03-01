@@ -12,22 +12,21 @@
   <header>
     <div>
         <a href="/">
-        <h1>My Book List</h1>
+        <h1>Book Detail</h1>
         </a>
     </div>
   </header>
 
   <main>
-    <h2>Search Results</h4>
-  <ul class="search-results">
+    <h2>Book Detail</h4>
+  <ul class="book-detail">
     <% searchesResults.forEach(item => { %>
         <section>
           <img src="<%= item.img_url %>">
           <h3><%= item.title %></h3>
           <span><%= item.author %></span>
           <p><%= item.description %></p>
-          <!-- <span><%= item.isbn %></span> -->
-          <a href="/">Select This Book</a>
+          <span><%= item.isbn %></span>
         </section>
     <% }) %>
   </ul>
@@ -35,6 +34,3 @@
 </body>
 
 </html>
-
-
-
